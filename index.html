@@ -1,85 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>CodeBuddy Code 技术手册</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
-        nav { position: fixed; top: 0; width: 100%; background: #333; padding: 10px; }
-        nav a { color: white; margin-right: 20px; text-decoration: none; }
-        section { margin: 40px 0; }
-        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
-        h1 { color: #2c3e50; }
-        h2 { color: #34495e; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeBuddy Code 交互式技术手册</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
-    <nav>
-        <a href="#ch1">概述</a>
-        <a href="#ch2">工具</a>
-        <a href="#ch3">流程</a>
-        <a href="#ch4">技巧</a>
-    </nav>
+    <div class="container">
+        <header>
+            <h1>CodeBuddy Code 交互式技术手册</h1>
+            <p>点击各个部分查看详细内容</p>
+        </header>
 
-    <main style="margin-top: 60px;">
-        <h1>CodeBuddy Code 技术手册</h1>
-        
-        <section id="ch1">
-            <h2>第1章：概述</h2>
-            <p>CodeBuddy Code 是基于GLM-5.0的命令行AI编程助手。</p>
-            <h3>核心能力：</h3>
-            <ul>
-                <li>文件操作：Read、Write、Edit</li>
-                <li>搜索：Glob、Grep</li>
-                <li>命令执行：Bash</li>
-                <li>版本控制：Git</li>
-            </ul>
-        </section>
+        <div class="chapter" onclick="toggleChapter(this)">
+            <div class="chapter-header">
+                <h2>🚀 第1章：核心能力体系</h2>
+                <span class="icon">▶</span>
+            </div>
+            <div class="chapter-content">
+                <p>CodeBuddy Code是基于GLM-5.0的AI编程助手，具备以下核心能力：</p>
+                
+                <div class="capability-grid">
+                    <div class="capability-card" onclick="showDetail(this, 'file-ops')">
+                        <h3>📁 文件系统操作</h3>
+                        <p>Read/Write/Edit/MultiEdit</p>
+                        <div class="detail-panel" id="file-ops">
+                            <h4>详细功能说明</h4>
+                            <p><strong>Read工具：</strong>读取文件内容，支持行号限制</p>
+                            <pre>Read(file_path="/src/app.js", limit=50)</pre>
+                            <p><strong>Write工具：</strong>创建新文件或覆盖现有文件</p>
+                            <pre>Write(file_path="/src/utils.js", content="export const sum = (a,b) => a+b")</pre>
+                            <p><strong>Edit工具：</strong>精确文本替换</p>
+                            <pre>Edit(file_path="/src/app.js", old_string="var x=1", new_string="const x=1")</pre>
+                        </div>
+                    </div>
 
-        <section id="ch2">
-            <h2>第2章：工具详解</h2>
-            <h3>Read工具</h3>
-            <p>读取文件内容</p>
-            <pre>Read(file_path="/src/app.js", limit=50)</pre>
+                    <div class="capability-card" onclick="showDetail(this, 'search')">
+                        <h3>🔍 智能搜索系统</h3>
+                        <p>Glob/Grep高级搜索</p>
+                        <div class="detail-panel" id="search">
+                            <h4>搜索功能详解</h4>
+                            <p><strong>Glob工具：</strong>按模式匹配文件</p>
+                            <pre>Glob(pattern="src/**/*.js")</pre>
+                            <p><strong>Grep工具：</strong>正则表达式内容搜索</p>
+                            <pre>Grep(pattern="function\\s+\\w+", glob="src/**/*.js")</pre>
+                        </div>
+                    </div>
 
-            <h3>Write工具</h3>
-            <p>创建新文件</p>
-            <pre>Write(file_path="/src/utils.js", content="export const sum=(a,b)=>a+b")</pre>
+                    <div class="capability-card" onclick="showDetail(this, 'execution')">
+                        <h3>⚡ 命令执行引擎</h3>
+                        <p>Bash Shell集成</p>
+                        <div class="detail-panel" id="execution">
+                            <h4>执行环境说明</h4>
+                            <p><strong>Bash工具：</strong>安全的命令执行</p>
+                            <pre>Bash(command="npm install", description="安装依赖")</pre>
+                            <p>支持后台运行、超时控制、环境变量设置</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <h3>Edit工具</h3>
-            <p>精确替换文本</p>
-            <pre>Edit(file_path="/src/app.js", old_string="var x=1", new_string="const x=1")</pre>
+        <div class="chapter" onclick="toggleChapter(this)">
+            <div class="chapter-header">
+                <h2>🔧 第2章：工具详解</h2>
+                <span class="icon">▶</span>
+            </div>
+            <div class="chapter-content">
+                <div class="tool-demo">
+                    <h3>点击工具名称查看完整用法</h3>
+                    <button onclick="showToolDemo('read')">Read工具演示</button>
+                    <button onclick="showToolDemo('bash')">Bash工具演示</button>
+                    <div id="tool-demo-area"></div>
+                </div>
+            </div>
+        </div>
 
-            <h3>Bash工具</h3>
-            <p>执行Shell命令</p>
-            <pre>Bash(command="npm install express", description="安装依赖")</pre>
-        </section>
-
-        <section id="ch3">
-            <h2>第3章：工作流程</h2>
-            <h3>添加API接口：</h3>
-            <ol>
-                <li>Glob("src/**/routes/*.js") 搜索路由文件</li>
-                <li>Read("src/app.js") 读取主文件</li>
-                <li>Write("src/controllers/user.js") 创建控制器</li>
-                <li>Edit("src/routes/index.js") 添加路由</li>
-                <li>Bash("curl localhost:3000/api/users") 测试</li>
-            </ol>
-        </section>
-
-        <section id="ch4">
-            <h2>第4章：实战技巧</h2>
-            <h3>提高效率：</h3>
-            <ul>
-                <li>创建CODEBUDDY.md定义规范</li>
-                <li>复杂任务先用Plan模式制定计划</li>
-                <li>重要操作前Git commit备份</li>
-            </ul>
-        </section>
-    </main>
-
-    <footer style="text-align: center; margin-top: 40px;">
-        <p>访问地址：http://43.159.56.7</p>
-    </footer>
+        <div class="chapter" onclick="toggleChapter(this)">
+            <div class="chapter-header">
+                <h2>⚙️ 第3章：实战工作流</h2>
+                <span class="icon">▶</span>
+            </div>
+            <div class="chapter-content">
+                <div class="workflow-step" onclick="showWorkflowDetail('init')">
+                    <h3>项目初始化流程</h3>
+                    <div class="workflow-detail" id="init">
+                        <ol>
+                            <li>分析现有代码：<code>Glob("src/**/*")</code></li>
+                            <li>制定规范：<code>Write("CODEBUDDY.md", ...)</code></li>
+                            <li>创建任务：<code>TaskCreate(...)</code></li>
+                            <li>执行实现：逐步完成各子任务</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
