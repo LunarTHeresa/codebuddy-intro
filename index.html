@@ -3,110 +3,570 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeBuddy Code - AI 编程助手</title>
+    <title>CodeBuddy Code - AI 编程助手 | 官方文档</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">CodeBuddy Code</div>
+            <div class="logo">
+                <span class="logo-icon">⌨</span>
+                <span class="logo-text">CodeBuddy Code</span>
+            </div>
             <ul class="nav-links">
-                <li><a href="#features">功能特点</a></li>
-                <li><a href="#about">关于我</a></li>
-                <li><a href="#contact">联系我们</a></li>
+                <li><a href="#overview">概述</a></li>
+                <li><a href="#features">核心能力</a></li>
+                <li><a href="#usage">使用指南</a></li>
+                <li><a href="#tips">进阶技巧</a></li>
+                <li><a href="#architecture">技术架构</a></li>
+                <li><a href="#contact">支持</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
+                <div class="hero-badge">Powered by GLM-5.0</div>
                 <h1>CodeBuddy Code</h1>
-                <p class="tagline">你的智能编程伙伴</p>
-                <p class="description">基于 GLM-5.0 模型，为你提供专业的编程辅助服务</p>
-                <a href="#features" class="cta-btn">了解更多</a>
+                <p class="tagline">新一代 AI 编程助手</p>
+                <p class="description">集成命令行工具与 AI 能力，提供代码生成、调试、重构、Git 操作等全流程开发支持。直接操作你的代码库，自动执行文件修改和终端命令。</p>
+                <div class="hero-buttons">
+                    <a href="#usage" class="cta-btn primary">快速开始</a>
+                    <a href="https://cnb.cool/codebuddy/codebuddy-code" target="_blank" class="cta-btn secondary">查看源码</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="terminal-demo">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">codebuddy</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line"><span class="prompt">$</span> 帮我创建一个用户认证模块</div>
+                        <div class="terminal-line output">正在分析需求...</div>
+                        <div class="terminal-line output success">✓ 创建 src/auth/user.service.ts</div>
+                        <div class="terminal-line output success">✓ 创建 src/auth/auth.controller.ts</div>
+                        <div class="terminal-line output success">✓ 创建 src/auth/auth.module.ts</div>
+                        <div class="terminal-line output success">✓ 更新 app.module.ts</div>
+                        <div class="terminal-line output info">认证模块已创建完成，包含登录、注册、JWT 验证功能</div>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- Overview Section -->
+        <section id="overview" class="overview">
+            <div class="container">
+                <h2>什么是 CodeBuddy Code？</h2>
+                <div class="overview-grid">
+                    <div class="overview-main">
+                        <p class="lead">CodeBuddy Code 是一款运行在命令行环境的 AI 编程助手，它不仅能理解你的自然语言指令，还能直接操作你的代码库——读取、编写、编辑文件，执行终端命令，管理 Git 工作流。</p>
+                        <p>与传统 AI 编程助手不同，CodeBuddy Code 具备完整的工具链能力。当你说"帮我修复这个 bug"时，它会主动搜索相关代码、分析问题根源、修改文件并验证修复效果，全程无需你手动干预。</p>
+                        <div class="highlight-box">
+                            <h4>核心优势</h4>
+                            <ul>
+                                <li><strong>自主执行</strong> — 自动完成文件读写、命令执行、Git 操作，无需手动复制粘贴</li>
+                                <li><strong>上下文理解</strong> — 自动探索代码库，理解项目结构和依赖关系</li>
+                                <li><strong>任务规划</strong> — 将复杂任务分解为可执行步骤，逐个完成并跟踪进度</li>
+                                <li><strong>安全可控</strong> — 敏感操作需要用户确认，支持权限级别配置</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overview-stats">
+                        <div class="stat-card">
+                            <div class="stat-value">50+</div>
+                            <div class="stat-label">内置工具</div>
+                            <div class="stat-desc">文件操作、Git、终端、Web 等</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">无限</div>
+                            <div class="stat-label">上下文长度</div>
+                            <div class="stat-desc">自动摘要与历史压缩</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">MCP</div>
+                            <div class="stat-label">协议支持</div>
+                            <div class="stat-desc">可扩展外部工具集成</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">团队</div>
+                            <div class="stat-label">协作模式</div>
+                            <div class="stat-desc">多 Agent 并行任务处理</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
         <section id="features" class="features">
-            <h2>功能特点</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">💡</div>
-                    <h3>智能代码生成</h3>
-                    <p>理解你的需求，自动生成高质量代码，支持多种编程语言</p>
+            <div class="container">
+                <h2>核心能力</h2>
+                <p class="section-desc">从代码编写到项目部署，CodeBuddy Code 提供全方位的开发支持</p>
+
+                <div class="feature-category">
+                    <h3 class="category-title">
+                        <span class="category-icon">📝</span>
+                        代码操作
+                    </h3>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h4>文件读写与编辑</h4>
+                            <p>支持读取任意文件、创建新文件、编辑现有文件。智能识别文件类型和编码格式，自动处理换行符和缩进。</p>
+                            <div class="feature-example">
+                                <code>"读取 package.json 并添加 eslint 配置"</code>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <h4>代码搜索与探索</h4>
+                            <p>使用 Glob 模式搜索文件，Grep 进行内容搜索。自动探索项目结构，快速定位目标代码。</p>
+                            <div class="feature-example">
+                                <code>"找出所有使用了 useState 的组件"</code>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <h4>多文件批量操作</h4>
+                            <p>MultiEdit 支持单文件多位置编辑，批量修改多个文件。适合重构命名、更新导入路径等场景。</p>
+                            <div class="feature-example">
+                                <code>"把所有组件中的 fetch 改成 axios"</code>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔧</div>
-                    <h3>代码调试</h3>
-                    <p>快速定位问题，提供详细的错误分析和修复建议</p>
+
+                <div class="feature-category">
+                    <h3 class="category-title">
+                        <span class="category-icon">⚡</span>
+                        命令执行
+                    </h3>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h4>终端命令执行</h4>
+                            <p>在持久化 Shell 会话中执行任意命令。支持 npm、git、docker、python 等所有命令行工具。</p>
+                            <div class="feature-example">
+                                <code>"运行测试并修复失败的用例"</code>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <h4>开发服务器管理</h4>
+                            <p>后台运行开发服务器、构建任务、数据库服务等长时间运行的进程。</p>
+                            <div class="feature-example">
+                                <code>"启动开发服务器并在浏览器打开"</code>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <h4>依赖管理</h4>
+                            <p>自动检测项目依赖，安装缺失的包，更新过时的依赖版本。</p>
+                            <div class="feature-example">
+                                <code>"安装 TypeScript 和相关类型定义"</code>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📚</div>
-                    <h3>代码解释</h3>
-                    <p>深入解析代码逻辑，帮助你理解复杂的项目结构</p>
+
+                <div class="feature-category">
+                    <h3 class="category-title">
+                        <span class="category-icon">🔀</span>
+                        Git 工作流
+                    </h3>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h4>版本控制</h4>
+                            <p>完整的 Git 操作支持：查看状态、暂存更改、创建提交、推送分支、创建 Pull Request。</p>
+                            <div class="feature-example">
+                                <code>"提交这些更改并创建 PR"</code>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <h4>分支管理</h4>
+                            <p>创建、切换、合并分支，处理合并冲突。支持 Git Worktree 进行并行开发。</p>
+                            <div class="feature-example">
+                                <code>"创建新分支开发登录功能"</code>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <h4>GitHub 集成</h4>
+                            <p>通过 GitHub CLI 创建 Issue、Pull Request，管理仓库设置和 Actions 工作流。</p>
+                            <div class="feature-example">
+                                <code>"给这个 PR 添加 review 评论"</code>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3>性能优化</h3>
-                    <p>分析代码性能瓶颈，提供专业的优化方案</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>安全审计</h3>
-                    <p>检测代码中的安全漏洞，确保你的应用安全可靠</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>协作开发</h3>
-                    <p>支持团队协作，提高开发效率和代码质量</p>
+
+                <div class="feature-category">
+                    <h3 class="category-title">
+                        <span class="category-icon">🌐</span>
+                        Web 能力
+                    </h3>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h4>网页抓取</h4>
+                            <p>获取网页内容并提取关键信息，用于查看文档、获取 API 响应、分析页面结构。</p>
+                            <div class="feature-example">
+                                <code>"查看 React 18 的更新日志"</code>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <h4>网络搜索</h4>
+                            <p>搜索最新技术资料、解决方案、库文档。突破训练数据截止日期限制。</p>
+                            <div class="feature-example">
+                                <code>"搜索 2026 年最新的 Next.js 最佳实践"</code>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about">
-            <h2>关于我</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>我是 <strong>CodeBuddy Code</strong>，一款由 GLM-5.0 模型驱动的智能编程助手。我专注于帮助开发者提高编程效率，解决技术难题。</p>
-                    <p>无论是代码编写、调试、重构还是架构设计，我都能为你提供专业的支持。我的目标是成为你最可靠的编程伙伴。</p>
-                    <ul class="capabilities">
-                        <li>支持多种编程语言和框架</li>
-                        <li>理解复杂的代码库结构</li>
-                        <li>提供上下文相关的建议</li>
-                        <li>自动执行文件操作和命令</li>
-                        <li>集成 Git 工作流</li>
-                    </ul>
-                </div>
-                <div class="stats">
-                    <div class="stat-item">
-                        <span class="stat-number">20+</span>
-                        <span class="stat-label">支持语言</span>
+        <!-- Usage Guide Section -->
+        <section id="usage" class="usage">
+            <div class="container">
+                <h2>使用指南</h2>
+                <p class="section-desc">从安装到精通，一步步掌握 CodeBuddy Code</p>
+
+                <div class="usage-steps">
+                    <div class="usage-step">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>安装与配置</h3>
+                            <div class="step-detail">
+                                <p>CodeBuddy Code 以命令行工具形式运行。首次使用需要进行简单的配置：</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>安装</span>
+                                    </div>
+                                    <pre><code># 通过 npm 安装
+npm install -g @codebuddy/codebuddy-code
+
+# 或使用 npx 直接运行
+npx @codebuddy/codebuddy-code</code></pre>
+                                </div>
+                                <p>配置文件位于 <code>~/.codebuddy/config.json</code>，可以设置：</p>
+                                <ul>
+                                    <li><strong>API Key</strong> — GLM-5.0 模型的访问密钥</li>
+                                    <li><strong>权限级别</strong> — auto（自动执行）或 plan（先规划后执行）</li>
+                                    <li><strong>忽略文件</strong> — 配置哪些文件不应该被访问</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">100+</span>
-                        <span class="stat-label">工具能力</span>
+
+                    <div class="usage-step">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>基本交互</h3>
+                            <div class="step-detail">
+                                <p>在项目目录中启动 CodeBuddy Code，使用自然语言描述你的需求：</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>对话示例</span>
+                                    </div>
+                                    <pre><code>用户: 当前项目的入口文件在哪里？
+
+CodeBuddy: 让我搜索一下...
+找到入口文件：src/index.ts
+
+用户: 帮我添加一个健康检查接口
+
+CodeBuddy: 正在读取 src/index.ts...
+正在添加 /health 端点...
+已完成。新的接口返回 { status: "ok" }</code></pre>
+                                </div>
+                                <div class="tip-box">
+                                    <strong>提示：</strong>描述任务时越具体越好。说明文件位置、期望行为、技术栈等信息，可以帮助我更准确地完成任务。
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">在线服务</span>
+
+                    <div class="usage-step">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>权限与确认</h3>
+                            <div class="step-detail">
+                                <p>出于安全考虑，某些操作需要你的确认：</p>
+                                <div class="permission-table">
+                                    <div class="permission-row">
+                                        <div class="permission-action">读取文件</div>
+                                        <div class="permission-level auto">自动执行</div>
+                                        <div class="permission-desc">无需确认</div>
+                                    </div>
+                                    <div class="permission-row">
+                                        <div class="permission-action">写入/修改文件</div>
+                                        <div class="permission-level confirm">需要确认</div>
+                                        <div class="permission-desc">首次修改新文件时确认</div>
+                                    </div>
+                                    <div class="permission-row">
+                                        <div class="permission-action">执行命令</div>
+                                        <div class="permission-level confirm">需要确认</div>
+                                        <div class="permission-desc">根据命令风险级别</div>
+                                    </div>
+                                    <div class="permission-row">
+                                        <div class="permission-action">Git 推送</div>
+                                        <div class="permission-level confirm">需要确认</div>
+                                        <div class="permission-desc">影响远程仓库的操作</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="usage-step">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h3>斜杠命令</h3>
+                            <div class="step-detail">
+                                <p>使用斜杠命令快速调用预定义功能：</p>
+                                <div class="command-grid">
+                                    <div class="command-item">
+                                        <code>/help</code>
+                                        <span>显示帮助信息</span>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>/clear</code>
+                                        <span>清除对话历史</span>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>/compact</code>
+                                        <span>压缩对话上下文</span>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>/permissions</code>
+                                        <span>查看权限设置</span>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>/model</code>
+                                        <span>切换模型</span>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>/loop</code>
+                                        <span>设置定时任务</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Tips Section -->
+        <section id="tips" class="tips">
+            <div class="container">
+                <h2>进阶技巧</h2>
+                <p class="section-desc">掌握这些技巧，让 CodeBuddy Code 发挥最大价值</p>
+
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">🎯</div>
+                        <h3>提供上下文信息</h3>
+                        <p>在请求中包含相关背景：使用的框架、目标平台、性能要求等。例如：</p>
+                        <div class="tip-example">
+                            <div class="example-bad">❌ "写一个登录功能"</div>
+                            <div class="example-good">✓ "用 Next.js App Router 实现登录功能，使用 NextAuth.js，支持 GitHub OAuth"</div>
+                        </div>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">📋</div>
+                        <h3>利用 CODEBUDDY.md</h3>
+                        <p>在项目根目录创建 <code>CODEBUDDY.md</code> 文件，记录项目规范、架构决策、编码风格。CodeBuddy Code 会自动读取并遵循这些约定。</p>
+                        <div class="code-block small">
+                            <pre><code># 项目规范
+
+## 技术栈
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+
+## 编码规范
+- 使用函数组件和 Hooks
+- 组件文件使用 PascalCase
+- 工具函数放在 lib/ 目录</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">🔄</div>
+                        <h3>任务分解与规划</h3>
+                        <p>对于复杂任务，可以先让我制定计划，确认后再执行。这样可以避免方向偏差，也方便你审核每个步骤。</p>
+                        <div class="tip-example">
+                            <div class="example-good">✓ "帮我重构用户模块，先列一个计划"</div>
+                            <p class="tip-note">我会创建任务列表，你可以审核、调整顺序，然后逐一执行</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">🔍</div>
+                        <h3>善用探索模式</h3>
+                        <p>在不确定如何实现时，先让我探索代码库，了解现有实现。例如：</p>
+                        <div class="code-block small">
+                            <pre><code>用户: 这个项目是怎么处理用户认证的？
+
+CodeBuddy: 让我探索一下...
+找到了认证相关的代码：
+- src/middleware.ts - 路由保护
+- src/lib/auth.ts - 认证逻辑
+- src/app/api/auth/ - API 路由
+
+使用的是 NextAuth.js，配置了...</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">⚙️</div>
+                        <h3>MCP 扩展</h3>
+                        <p>通过 Model Context Protocol (MCP) 扩展能力。可以连接数据库、调用外部 API、集成第三方服务。</p>
+                        <div class="tip-example">
+                            <p>常用 MCP 服务器：</p>
+                            <ul>
+                                <li><code>filesystem</code> — 扩展文件系统访问</li>
+                                <li><code>github</code> — GitHub API 集成</li>
+                                <li><code>sqlite/postgres</code> — 数据库操作</li>
+                                <li><code>puppeteer</code> — 浏览器自动化</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">👥</div>
+                        <h3>团队协作模式</h3>
+                        <p>创建多个 Agent 并行处理任务。每个 Agent 专注不同领域：前端、后端、测试等。</p>
+                        <div class="code-block small">
+                            <pre><code>用户: 创建一个团队来重构这个项目
+
+CodeBuddy: 创建团队 [refactor-team]
+- architect: 分析现有架构
+- frontend-dev: 重构组件
+- backend-dev: 优化 API
+- tester: 编写测试用例</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture Section -->
+        <section id="architecture" class="architecture">
+            <div class="container">
+                <h2>技术架构</h2>
+                <p class="section-desc">了解 CodeBuddy Code 的工作原理</p>
+
+                <div class="arch-diagram">
+                    <div class="arch-layer">
+                        <div class="layer-title">用户层</div>
+                        <div class="layer-items">
+                            <div class="arch-item">CLI 界面</div>
+                            <div class="arch-item">自然语言输入</div>
+                            <div class="arch-item">确认/拒绝操作</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer highlight">
+                        <div class="layer-title">Agent 核心</div>
+                        <div class="layer-items">
+                            <div class="arch-item">GLM-5.0 模型</div>
+                            <div class="arch-item">任务规划器</div>
+                            <div class="arch-item">上下文管理</div>
+                            <div class="arch-item">工具调度器</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <div class="layer-title">工具层</div>
+                        <div class="layer-items">
+                            <div class="arch-item group">
+                                <span class="group-title">文件操作</span>
+                                <span>Read / Write / Edit / Glob / Grep</span>
+                            </div>
+                            <div class="arch-item group">
+                                <span class="group-title">命令执行</span>
+                                <span>Bash / TaskCreate / TaskOutput</span>
+                            </div>
+                            <div class="arch-item group">
+                                <span class="group-title">Git/GitHub</span>
+                                <span>Commit / Branch / PR / Issue</span>
+                            </div>
+                            <div class="arch-item group">
+                                <span class="group-title">Web</span>
+                                <span>WebFetch / WebSearch</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <div class="layer-title">扩展层 (MCP)</div>
+                        <div class="layer-items">
+                            <div class="arch-item">数据库连接</div>
+                            <div class="arch-item">云服务 API</div>
+                            <div class="arch-item">自定义工具</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arch-features">
+                    <div class="arch-feature">
+                        <h4>上下文压缩</h4>
+                        <p>自动对历史对话进行摘要压缩，支持无限上下文长度的对话。</p>
+                    </div>
+                    <div class="arch-feature">
+                        <h4>安全沙箱</h4>
+                        <p>命令执行在沙箱环境中运行，防止意外破坏系统文件。</p>
+                    </div>
+                    <div class="arch-feature">
+                        <h4>错误恢复</h4>
+                        <p>操作失败时自动分析原因并提供修复建议，支持回滚已执行的修改。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
         <section id="contact" class="contact">
-            <h2>联系我们</h2>
-            <p>有问题或建议？欢迎通过以下方式联系我们：</p>
-            <div class="contact-links">
-                <a href="https://cnb.cool/codebuddy/codebuddy-code/-/issues" target="_blank" class="contact-btn">提交 Issue</a>
-                <a href="https://cnb.cool/codebuddy/codebuddy-code" target="_blank" class="contact-btn">访问项目</a>
+            <div class="container">
+                <h2>获取支持</h2>
+                <p class="section-desc">遇到问题或有建议？我们随时为你提供帮助</p>
+
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📖</div>
+                        <h3>文档中心</h3>
+                        <p>查阅完整的使用文档、API 参考和最佳实践</p>
+                        <a href="https://cnb.cool/codebuddy/codebuddy-code/-/wikis/home" target="_blank" class="contact-link">访问文档</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">🐛</div>
+                        <h3>问题反馈</h3>
+                        <p>报告 Bug 或提交功能请求，帮助我们改进产品</p>
+                        <a href="https://cnb.cool/codebuddy/codebuddy-code/-/issues" target="_blank" class="contact-link">提交 Issue</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">💻</div>
+                        <h3>源代码</h3>
+                        <p>查看源码、参与贡献、Fork 项目</p>
+                        <a href="https://cnb.cool/codebuddy/codebuddy-code" target="_blank" class="contact-link">访问仓库</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 CodeBuddy Code. Powered by GLM-5.0</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">⌨</span>
+                    <span class="logo-text">CodeBuddy Code</span>
+                </div>
+                <p class="footer-desc">基于 GLM-5.0 的新一代 AI 编程助手</p>
+                <p class="footer-copyright">&copy; 2026 CodeBuddy Code. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
